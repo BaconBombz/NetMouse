@@ -5,14 +5,15 @@ version = " NetMouse Version: Alpha_1.0"
 import sys
 import os
 import time
+import readline
 
 #Append NetMouse's Modules' Directories
 sys.path.append("modules/NetCat/")
 sys.path.append("modules/")
 
 #Import NetMouse Modules
-import menu
-import reqFunc
+from reqFunc import *
+import netcatmenu
 
 #ARGV Setup
 if (len(sys.argv) > 1):
@@ -49,8 +50,8 @@ if (len(arg1) > 1):
         print("Invalid Argument")
 
 def mainMenu():
-    print(reqFunc.tc.lBlue)
-    reqFunc.title()
+    print(tc.lBlue)
+    title()
     time.sleep(0.2)
     print("1)   NetCat")
     time.sleep(0.2)
@@ -60,19 +61,19 @@ def mainMenu():
     time.sleep(0.2)
     print("00)  Exit")
     time.sleep(0.2)
-    reqFunc.longl()
-    option = input("(" + reqFunc.tc.lGreen + "MainMenu" + reqFunc.tc.lBlue + ")" + reqFunc.tc.lBlue + "> " + reqFunc.tc.yellow)
+    longl()
+    option = input("(" + tc.lGreen + "MainMenu" + tc.lBlue + ")" + tc.lBlue + "> " + tc.yellow)
     mainMenuOps(option)
 
 def mainMenuOps(option):
     if (option == "1"):
-        menu.p()
+        netcatmenu.netCatMenu()
     elif (option == "2"):
         cc
     elif (option == "3"):
         nm
     elif (option == "00"):
-        reqFunc.clear()
+        clear()
         exit()
     else:
         mainMenu();

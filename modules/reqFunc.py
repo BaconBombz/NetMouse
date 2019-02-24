@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
-#Import Neessary Libraries
+#Import Libraries For Functions
+import sys
 import os
+import time
+import readline
 
 #Setup Colors
 class tc:
